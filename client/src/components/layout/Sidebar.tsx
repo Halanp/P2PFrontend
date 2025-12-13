@@ -42,9 +42,11 @@ export function Sidebar() {
         />
       )}
 
+      {/* Sidebar - Desktop: Sticky, Mobile: Fixed */}
       <aside className={cn(
-        "fixed left-0 top-18 bottom-0 w-64 bg-background overflow-y-auto z-40 pb-4 border-r-2 border-black dark:border-white transition-transform duration-300 ease-in-out p-4",
-        sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        "bg-background z-40 pb-4 border-r-2 border-black dark:border-white transition-transform duration-300 ease-in-out p-4 h-[calc(100vh-4.5rem)] overflow-y-auto no-scrollbar",
+        "fixed md:sticky top-[4.5rem] left-0 w-64",
+        sidebarOpen ? "translate-x-0" : "-translate-x-full md:hidden"
       )}>
         <div className="space-y-2 mb-8">
           {mainLinks.map((link) => (
@@ -72,7 +74,7 @@ export function Sidebar() {
           ))}
         </div>
 
-        <div className="absolute bottom-4 left-4 right-4 p-4 border-2 border-dashed border-black/20 dark:border-white/20 rounded-lg bg-secondary/10">
+        <div className="mt-8 px-4 py-4 border-2 border-dashed border-black/20 dark:border-white/20 rounded-lg bg-secondary/10">
           <p className="text-[10px] font-mono text-center opacity-70">
             STREAM PUNK © 2025
             <br />
