@@ -4,7 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { VideoCard } from '@/components/video/VideoCard';
 import { videos } from '@/lib/mockData';
-import { ThumbsUp, ThumbsDown, Share2, MoreHorizontal, Download, MessageSquare, Heart } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, Share2, MoreHorizontal, Download, MessageSquare, Heart, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useAppStore } from '@/stores/useAppStore';
