@@ -81,7 +81,7 @@ export function Header() {
           <div className="relative flex items-center justify-center w-10 h-10 bg-primary border-2 border-black dark:border-white rounded-md shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] group-hover:translate-x-[1px] group-hover:translate-y-[1px] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
             <Sparkles className="text-white w-6 h-6" />
           </div>
-          <span className="text-2xl font-black tracking-tighter font-display uppercase italic">Stream<span className="text-primary">Punk</span></span>
+          <span className="text-2xl font-black tracking-tighter font-display uppercase italic">Peer<span className="text-primary">Flix</span></span>
         </Link>
       </div>
 
