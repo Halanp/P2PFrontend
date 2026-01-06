@@ -34,83 +34,85 @@
   --radius-xl: 1rem;
 }
 
-/* GAMING DARK THEME - Based on uploaded reference */
+/* iOS-REFINED GAMING PALETTE - Exact colors from uploaded image */
 :root {
-  --background: 220 20% 97%;
+  --background: 220 18% 96%;
   /* Light mode background */
-  --foreground: 224 15% 15%;
-  /* Dark text for light mode */
+  --foreground: 230 25% 12%;
+  /* #171726 - Dark text */
 
-  --card: 0 0% 100%;
-  /* White cards in light mode */
-  --card-foreground: 224 15% 15%;
+  --card: 0 0% 100% / 0.8;
+  /* Semi-transparent white cards */
+  --card-foreground: 230 25% 12%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 224 15% 15%;
+  --popover: 0 0% 100% / 0.85;
+  /* Semi-transparent popover */
+  --popover-foreground: 230 25% 12%;
 
-  --primary: 235 80% 63%;
-  /* #4169ff - Vibrant blue */
+  --primary: 230 100% 67%;
+  /* #5b7cff - Vibrant blue from image */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 270 60% 70%;
-  /* Purple accent */
-  --secondary-foreground: 0 0% 100%;
+  --secondary: 265 65% 75%;
+  /* #b794f6 - Purple accent from image */
+  --secondary-foreground: 230 25% 12%;
 
-  --muted: 220 15% 90%;
-  --muted-foreground: 220 10% 45%;
+  --muted: 220 15% 92%;
+  --muted-foreground: 220 10% 40%;
 
-  --accent: 235 80% 63%;
+  --accent: 230 100% 67%;
   /* Vibrant blue accent */
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 220 13% 85%;
-  --input: 0 0% 100%;
-  --ring: 235 80% 63%;
+  --border: 220 13% 88% / 0.3;
+  /* Semi-transparent borders */
+  --input: 0 0% 98%;
+  --ring: 230 100% 67%;
 
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: 230 20% 6%;
-  /* #0a0a0f - Very dark navy */
-  --foreground: 0 0% 95%;
-  /* #f2f2f2 - Light text */
+  --background: 230 25% 10%;
+  /* #0f0f1a - Exact dark navy from image */
+  --foreground: 0 0% 96%;
+  /* #f5f5f5 - Bright white text */
 
-  --card: 230 18% 11%;
-  /* #1a1a2e - Dark charcoal cards */
-  --card-foreground: 0 0% 95%;
+  --card: 230 22% 14% / 0.6;
+  /* Semi-transparent dark cards */
+  --card-foreground: 0 0% 96%;
 
-  --popover: 230 18% 13%;
-  /* #1e1e30 - Slightly lighter for elevation */
-  --popover-foreground: 0 0% 95%;
+  --popover: 230 20% 16% / 0.7;
+  /* Semi-transparent elevated surface */
+  --popover-foreground: 0 0% 96%;
 
-  --primary: 235 80% 63%;
-  /* #4169ff - Vibrant blue */
+  --primary: 230 100% 67%;
+  /* #5b7cff - Vibrant blue from image */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 270 60% 70%;
-  /* #b794f6 - Purple accent */
-  --secondary-foreground: 230 20% 10%;
+  --secondary: 265 65% 75%;
+  /* #b794f6 - Purple accent from image */
+  --secondary-foreground: 230 25% 10%;
 
-  --muted: 230 15% 15%;
-  /* #20202e - Muted dark */
-  --muted-foreground: 220 10% 60%;
-  /* #9999a8 */
+  --muted: 230 20% 18%;
+  /* #222236 - Muted elements */
+  --muted-foreground: 220 10% 65%;
+  /* #a3a3b3 */
 
-  --accent: 235 80% 63%;
-  /* #4169ff - Vibrant blue accent */
+  --accent: 230 100% 67%;
+  /* #5b7cff - Vibrant blue accent */
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 230 15% 20%;
-  /* #2e2e3e - Subtle dark borders */
+  --border: 230 18% 22% / 0.3;
+  /* Semi-transparent borders */
   --input: 230 18% 13%;
-  --ring: 235 80% 63%;
+  --ring: 230 100% 67%;
 }
 
 @layer base {
@@ -149,7 +151,7 @@
 
 @layer components {
   .neo-box {
-    @apply border border-border rounded-xl bg-card text-card-foreground shadow-sm hover:shadow-md transition-all;
+    @apply border border-border rounded-xl bg-card text-card-foreground shadow-sm hover:shadow-md transition-all backdrop-blur-xl;
   }
 
   .neo-button {
@@ -157,7 +159,7 @@
   }
 
   .neo-input {
-    @apply w-full h-10 px-3 border border-border rounded-lg bg-input focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+    @apply w-full h-10 px-3 border border-border rounded-lg bg-input focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all backdrop-blur-md;
   }
 
   .neo-badge {

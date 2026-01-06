@@ -69,7 +69,7 @@ export function Header() {
   const unreadCount = mockNotifications.filter(n => n.unread).length;
 
   return (
-    <header className="fixed top-0 left-0 right-0 h-18 bg-background z-50 flex items-center justify-between px-6 border-b-2 border-black dark:border-white">
+    <header className="fixed top-0 left-0 right-0 h-18 bg-card/80 backdrop-blur-xl z-50 flex items-center justify-between px-6 border-b border-border">
       <div className="flex items-center gap-6">
         <button
           onClick={toggleSidebar}
@@ -174,36 +174,37 @@ export function Header() {
         {/* User Profile Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="w-10 h-10 rounded-lg overflow-hidden border-2 border-black dark:border-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all">
-              <img src={currentUser.avatarUrl} alt="User" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" />
+            <button className="neo-button p-0 w-10 h-10 flex items-center justify-center rounded-full bg-secondary text-white">
+              <User size={20} strokeWidth={2.5} />
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56 border-2 border-black dark:border-white bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]" align="end">
-            <div className="px-3 py-3 border-b-2 border-black/10 dark:border-white/10">
+          <DropdownMenuContent className="w-56 border border-border bg-popover/95 backdrop-blur-xl shadow-lg rounded-xl" align="end">
+            <div className="px-3 py-3 border-b border-border">
               <p className="font-bold text-sm">{currentUser.name}</p>
               <p className="text-xs text-muted-foreground font-mono">{currentUser.email}</p>
             </div>
             <Link href="/profile">
-              <DropdownMenuItem className="cursor-pointer font-bold uppercase text-sm tracking-wide">
+              <DropdownMenuItem className="cursor-pointer font-semibold text-sm">
                 <User size={16} strokeWidth={2.5} className="mr-2" />
                 Profile
               </DropdownMenuItem>
             </Link>
-            <DropdownMenuItem className="cursor-pointer font-bold uppercase text-sm tracking-wide">
+            <DropdownMenuItem className="cursor-pointer font-semibold text-sm">
               <Settings size={16} strokeWidth={2.5} className="mr-2" />
               Settings
             </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer font-bold uppercase text-sm tracking-wide">
+            <DropdownMenuItem className="cursor-pointer font-semibold text-sm">
               <RefreshCw size={16} strokeWidth={2.5} className="mr-2" />
               Switch Account
             </DropdownMenuItem>
-            <DropdownMenuSeparator className="bg-black/10 dark:bg-white/10" />
-            <DropdownMenuItem className="cursor-pointer font-bold uppercase text-sm tracking-wide text-red-600 dark:text-red-400">
+            <DropdownMenuSeparator className="bg-border" />
+            <DropdownMenuItem className="cursor-pointer font-semibold text-sm text-red-600 dark:text-red-400">
               <LogOut size={16} strokeWidth={2.5} className="mr-2" />
               Sign Out
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+
       </div>
     </header>
   );
