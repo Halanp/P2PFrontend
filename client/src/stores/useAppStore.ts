@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { playlists as initialPlaylists } from '@/lib/mockData';
+import { PlaylistItem } from '@/lib/types';
 
 interface AppState {
   sidebarOpen: boolean;
@@ -11,6 +13,9 @@ interface AppState {
   setActiveCategory: (category: string) => void;
   theme: 'light' | 'dark';
   toggleTheme: () => void;
+  playlists: PlaylistItem[];
+  addPlaylist: (name: string) => void;
+  deletePlaylist: (id: string) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -23,7 +28,7 @@ export const useAppStore = create<AppState>()(
       setSearchQuery: (query) => set({ searchQuery: query }),
       activeCategory: 'All',
       setActiveCategory: (category) => set({ activeCategory: category }),
-      theme: 'dark', 
+      theme: 'dark',
       toggleTheme: () => set((state) => {
         const newTheme = state.theme === 'light' ? 'dark' : 'light';
         if (newTheme === 'dark') {
@@ -33,6 +38,20 @@ export const useAppStore = create<AppState>()(
         }
         return { theme: newTheme };
       }),
+      playlists: initialPlaylists,
+      addPlaylist: (name) => set((state) => ({
+        playlists: [
+          ...state.playlists,
+          {
+            id: `p${Date.now()}`,
+            name,
+            count: 0,
+          }
+        ]
+      })),
+      deletePlaylist: (id) => set((state) => ({
+        playlists: state.playlists.filter(p => p.id !== id)
+      })),
     }),
     {
       name: 'yt-clone-storage',
