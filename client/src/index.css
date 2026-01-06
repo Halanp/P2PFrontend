@@ -23,88 +23,111 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
+
   --font-sans: 'DM Sans', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'Space Mono', monospace;
-  
+
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
 }
 
-/* NEO-BRUTALISM THEME */
+/* GAMING DARK THEME - Based on uploaded reference */
 :root {
-  --background: 45 29% 97%; /* #fbf9f5 - Warm Paper */
-  --foreground: 0 0% 10%; /* #1a1a1a - Soft Black */
-  
+  --background: 220 20% 97%;
+  /* Light mode background */
+  --foreground: 224 15% 15%;
+  /* Dark text for light mode */
+
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 10%;
-  
+  /* White cards in light mode */
+  --card-foreground: 224 15% 15%;
+
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 10%;
-  
-  --primary: 262 83% 58%; /* #8b5cf6 - Vivid Purple */
+  --popover-foreground: 224 15% 15%;
+
+  --primary: 235 80% 63%;
+  /* #4169ff - Vibrant blue */
   --primary-foreground: 0 0% 100%;
-  
-  --secondary: 173 80% 40%; /* #14b8a6 - Teal */
+
+  --secondary: 270 60% 70%;
+  /* Purple accent */
   --secondary-foreground: 0 0% 100%;
-  
-  --muted: 45 20% 90%;
-  --muted-foreground: 0 0% 40%;
-  
-  --accent: 55 90% 60%; /* #fcd34d - Yellow */
-  --accent-foreground: 0 0% 10%;
-  
+
+  --muted: 220 15% 90%;
+  --muted-foreground: 220 10% 45%;
+
+  --accent: 235 80% 63%;
+  /* Vibrant blue accent */
+  --accent-foreground: 0 0% 100%;
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 0 0% 10%; /* Solid Black Borders */
+  --border: 220 13% 85%;
   --input: 0 0% 100%;
-  --ring: 262 83% 58%;
-  
-  --radius: 0.5rem;
+  --ring: 235 80% 63%;
+
+  --radius: 0.75rem;
 }
 
 .dark {
-  --background: 240 10% 4%; /* #09090b */
-  --foreground: 0 0% 98%;
-  
-  --card: 240 10% 10%;
-  --card-foreground: 0 0% 98%;
-  
-  --popover: 240 10% 10%;
-  --popover-foreground: 0 0% 98%;
-  
-  --primary: 262 83% 68%;
-  --primary-foreground: 0 0% 10%;
-  
-  --secondary: 173 80% 50%;
-  --secondary-foreground: 0 0% 10%;
-  
-  --muted: 240 10% 15%;
-  --muted-foreground: 240 5% 65%;
-  
-  --accent: 55 90% 60%;
-  --accent-foreground: 0 0% 10%;
-  
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 98%;
+  --background: 230 20% 6%;
+  /* #0a0a0f - Very dark navy */
+  --foreground: 0 0% 95%;
+  /* #f2f2f2 - Light text */
 
-  --border: 0 0% 80%; /* Light Borders for Dark Mode */
-  --input: 240 10% 15%;
-  --ring: 262 83% 68%;
+  --card: 230 18% 11%;
+  /* #1a1a2e - Dark charcoal cards */
+  --card-foreground: 0 0% 95%;
+
+  --popover: 230 18% 13%;
+  /* #1e1e30 - Slightly lighter for elevation */
+  --popover-foreground: 0 0% 95%;
+
+  --primary: 235 80% 63%;
+  /* #4169ff - Vibrant blue */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 270 60% 70%;
+  /* #b794f6 - Purple accent */
+  --secondary-foreground: 230 20% 10%;
+
+  --muted: 230 15% 15%;
+  /* #20202e - Muted dark */
+  --muted-foreground: 220 10% 60%;
+  /* #9999a8 */
+
+  --accent: 235 80% 63%;
+  /* #4169ff - Vibrant blue accent */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 230 15% 20%;
+  /* #2e2e3e - Subtle dark borders */
+  --input: 230 18% 13%;
+  --ring: 235 80% 63%;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight font-bold;
   }
 
@@ -115,27 +138,29 @@
     background: transparent;
     display: none;
   }
-  
+
   * {
-    -ms-overflow-style: none !important;  /* IE and Edge */
-    scrollbar-width: none !important;  /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+    scrollbar-width: none !important;
+    /* Firefox */
   }
 }
 
 @layer components {
   .neo-box {
-    @apply border-2 border-black dark:border-white rounded-lg bg-card text-card-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] transition-all;
+    @apply border border-border rounded-xl bg-card text-card-foreground shadow-sm hover:shadow-md transition-all;
   }
-  
+
   .neo-button {
-    @apply px-4 py-2 font-bold text-sm uppercase tracking-wide border-2 border-black dark:border-white rounded-md bg-accent text-accent-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none hover:bg-accent/80 transition-all;
+    @apply px-4 py-2 font-semibold text-sm rounded-lg bg-accent text-accent-foreground hover:opacity-90 active:opacity-80 transition-all;
   }
 
   .neo-input {
-    @apply w-full h-10 px-3 border-2 border-black dark:border-white rounded-md bg-input focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    @apply w-full h-10 px-3 border border-border rounded-lg bg-input focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
   }
 
   .neo-badge {
-    @apply px-2 py-0.5 text-xs font-bold uppercase border border-black dark:border-white bg-white dark:bg-black rounded-sm shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] dark:shadow-[1px_1px_0px_0px_rgba(255,255,255,1)];
+    @apply px-2 py-0.5 text-xs font-semibold bg-secondary text-secondary-foreground rounded-md;
   }
 }
